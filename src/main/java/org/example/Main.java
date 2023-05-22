@@ -1,5 +1,8 @@
 package org.example;
 
+import io.jexxa.core.JexxaMain;
+import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
+
 import java.util.List;
 
 public class Main {
@@ -13,5 +16,14 @@ public class Main {
         benutzerVerwaltung.add(michael);
         List<Benutzer> alleBenutzer = benutzerVerwaltung.get();
         alleBenutzer.forEach( element -> System.out.println(element.getVorname()));
+        var jexxaMain = new JexxaMain(Main.class);
+
+        jexxaMain
+                // Bind a REST adapter to expose parts of the application
+                .bind(RESTfulRPCAdapter.class).to(benutzerVerwaltung)               // Get greetings: http://localhost:7501/HelloJexxa/greetings
+                .bind(RESTfulRPCAdapter.class).to(jexxaMain.getBoundedContext())  // Get stats: http://localhost:7501/BoundedContext/isRunning
+
+                // Run your application until Ctrl-C is pressed
+                .run();
     }
 }
