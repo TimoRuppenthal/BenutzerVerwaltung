@@ -2,6 +2,8 @@ package org.example;
 
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
+import org.example.domain.Benutzer;
+import org.example.domain.BenutzerVerwaltung;
 
 import java.util.List;
 
