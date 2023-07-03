@@ -6,9 +6,12 @@ public class Benutzer {
     private final String nachname;
     private final String vorname;
 
-    public Benutzer(String nachname, String vorname){
+    private final String emailAdresse;
+
+    public Benutzer(String nachname, String vorname, String emailAdresse){
         this.nachname = nachname;
         this.vorname = vorname;
+        this.emailAdresse = emailAdresse;
     }
 
     @Override
@@ -32,4 +35,5 @@ public class Benutzer {
     public String getVorname() {
         return vorname;
     }
+
 }

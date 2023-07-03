@@ -3,16 +3,20 @@ package org.example;
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import org.example.domain.Benutzer;
+import org.example.domain.BenutzerRepository;
 import org.example.domain.BenutzerVerwaltung;
+import org.example.infrastructure.drivenadapter.persistence.BenutzerRepositoryImpl;
 
 import java.util.List;
 
 public class Main {
     @SuppressWarnings("java:S106")// Okay da Demoprojekt
     public static void main(String[] args) {
-        BenutzerVerwaltung benutzerVerwaltung = new BenutzerVerwaltung();
-        Benutzer timo = new Benutzer("Ruppenthal", "Timo");
-        Benutzer michael = new Benutzer("Repplinger", "Michael");
+        BenutzerRepository benutzerRepository = new BenutzerRepositoryImpl();
+
+        BenutzerVerwaltung benutzerVerwaltung = new BenutzerVerwaltung(benutzerRepository);
+        Benutzer timo = new Benutzer ("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com");
+        Benutzer michael = new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com");
 
         benutzerVerwaltung.add(timo);
         benutzerVerwaltung.add(michael);

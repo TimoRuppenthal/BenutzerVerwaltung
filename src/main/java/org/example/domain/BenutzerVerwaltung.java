@@ -6,18 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BenutzerVerwaltung {
-    private final List<Benutzer> benutzerList = new ArrayList<>();
+
+    private final BenutzerRepository benutzerRepository;
 
     public void add (Benutzer benutzer){
-        benutzerList.add(benutzer);
+        benutzerRepository.add(benutzer);
     }
 
     @SuppressWarnings("unused")
     public void delete (Benutzer benutzer){
-        benutzerList.remove(benutzer);
+        benutzerRepository.remove(benutzer);
     }
 
     public List<Benutzer> get (){
-        return benutzerList;
+        return benutzerRepository.getAll();
+    }
+
+    public BenutzerVerwaltung (BenutzerRepository benutzerRepository){
+        this.benutzerRepository = benutzerRepository;
     }
 }
