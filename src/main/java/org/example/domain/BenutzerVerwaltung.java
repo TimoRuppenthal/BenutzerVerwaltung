@@ -1,8 +1,5 @@
 package org.example.domain;
 
-import org.example.domain.Benutzer;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class BenutzerVerwaltung {
