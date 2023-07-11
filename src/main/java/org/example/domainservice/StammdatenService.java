@@ -6,7 +6,8 @@ import org.example.domain.BenutzerRepository;
 import java.util.List;
 
 public class StammdatenService {
-
+    private static final Benutzer TIMO = new Benutzer("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com");
+    private static final Benutzer MICHAEL = new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com");
     private final BenutzerRepository benutzerRepository;
 
     public StammdatenService(BenutzerRepository benutzerRepository) {
@@ -16,11 +17,11 @@ public class StammdatenService {
     public void initStammdaten(){
 
         List<Benutzer> alleBenutzer = benutzerRepository.getAll();
-        if(!alleBenutzer.contains(new Benutzer ("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com"))){
-            benutzerRepository.add(new Benutzer ("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com"));
+        if(!alleBenutzer.contains(TIMO)){
+            benutzerRepository.add(TIMO);
         }
-        if(!alleBenutzer.contains(new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com"))){
-            benutzerRepository.add(new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com"));
+        if(!alleBenutzer.contains(MICHAEL)){
+            benutzerRepository.add(MICHAEL);
         }
         benutzerRepository
                 .getAll()
