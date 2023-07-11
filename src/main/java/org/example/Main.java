@@ -2,18 +2,17 @@ package org.example;
 
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
-import org.example.domain.Benutzer;
 import org.example.domain.BenutzerRepository;
 import org.example.domain.BenutzerVerwaltung;
 import org.example.domainservice.StammdatenService;
 import org.example.infrastructure.drivenadapter.persistence.BenutzerRepositoryImpl;
 
-import java.util.List;
+import java.util.Properties;
 
 public class Main {
     @SuppressWarnings("java:S106")// Okay da Demoprojekt
     public static void main(String[] args) {
-        BenutzerRepository benutzerRepository = new BenutzerRepositoryImpl();
+        BenutzerRepository benutzerRepository = new BenutzerRepositoryImpl(new Properties());
 
         BenutzerVerwaltung benutzerVerwaltung = new BenutzerVerwaltung(benutzerRepository);
 

@@ -36,4 +36,6 @@ public class Benutzer {
         return vorname;
     }
 
+    public String getEmailAdresse(){ return emailAdresse; }
+
 }
