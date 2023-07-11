@@ -3,7 +3,7 @@ package org.example;
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import org.example.domain.BenutzerRepository;
-import org.example.domain.BenutzerVerwaltung;
+import org.example.applicationservice.BenutzerVerwaltung;
 import org.example.domainservice.StammdatenService;
 import org.example.infrastructure.drivenadapter.persistence.BenutzerRepositoryImpl;
 

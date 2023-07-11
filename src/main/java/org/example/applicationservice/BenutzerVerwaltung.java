@@ -1,4 +1,7 @@
-package org.example.domain;
+package org.example.applicationservice;
+
+import org.example.domain.Benutzer;
+import org.example.domain.BenutzerRepository;
 
 import java.util.List;
 
