@@ -5,6 +5,7 @@ import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import org.example.domain.Benutzer;
 import org.example.domain.BenutzerRepository;
 import org.example.domain.BenutzerVerwaltung;
+import org.example.domainservice.StammdatenService;
 import org.example.infrastructure.drivenadapter.persistence.BenutzerRepositoryImpl;
 
 import java.util.List;
@@ -15,13 +16,10 @@ public class Main {
         BenutzerRepository benutzerRepository = new BenutzerRepositoryImpl();
 
         BenutzerVerwaltung benutzerVerwaltung = new BenutzerVerwaltung(benutzerRepository);
-        Benutzer timo = new Benutzer ("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com");
-        Benutzer michael = new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com");
 
-        benutzerVerwaltung.add(timo);
-        benutzerVerwaltung.add(michael);
-        List<Benutzer> alleBenutzer = benutzerVerwaltung.get();
-        alleBenutzer.forEach( element -> System.out.println(element.getVorname()));
+        StammdatenService stammdatenService = new StammdatenService(benutzerRepository);
+        stammdatenService.initStammdaten();
+
         var jexxaMain = new JexxaMain(Main.class);
 
         jexxaMain
