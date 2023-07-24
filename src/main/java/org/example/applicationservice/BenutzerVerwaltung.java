@@ -12,17 +12,20 @@ public class BenutzerVerwaltung {
 
     private final BenutzerRepository benutzerRepository;
 
-    /*public void add (Benutzer benutzer){
-        benutzerRepository.add(benutzer);
+    public void add (String vorname, String nachname, EmailAdresse emailAdresse){
+        benutzerRepository.add(new Benutzer(nachname, vorname, emailAdresse.emailAdresse()));
     }
 
     @SuppressWarnings("unused")
-    public void delete (Benutzer benutzer){
-        benutzerRepository.remove(benutzer);
-    }*/
+    public void delete (EmailAdresse emailAdresse){
+        benutzerRepository.remove(emailAdresse);
+    }
 
     public List<EmailAdresse> get (){
-        return benutzerRepository.getAll().stream().map(Benutzer::getEmailAdresse).toList();
+        return benutzerRepository.getAll()
+                .stream()
+                .map(Benutzer::getEmailAdresse)
+                .toList();
     }
 
     public BenutzerVerwaltung (BenutzerRepository benutzerRepository){

@@ -23,8 +23,8 @@ public class BenutzerRepositoryImpl implements BenutzerRepository {
     }
 
     @Override
-    public void remove(Benutzer benutzer) {
-        repository.remove(benutzer.getEmailAdresse());
+    public void remove(EmailAdresse emailAdresse) {
+        repository.remove(emailAdresse);
 
     }
 
