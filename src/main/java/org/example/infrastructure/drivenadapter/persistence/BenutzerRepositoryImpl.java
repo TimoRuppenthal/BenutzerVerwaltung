@@ -5,13 +5,14 @@ import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
 import org.example.domain.Benutzer;
 import org.example.domain.BenutzerRepository;
+import org.example.domain.EmailAdresse;
 
 import java.util.List;
 import java.util.Properties;
 
 @DrivenAdapter
 public class BenutzerRepositoryImpl implements BenutzerRepository {
-    private final IRepository<Benutzer, String> repository;
+    private final IRepository<Benutzer, EmailAdresse> repository;
 
     public BenutzerRepositoryImpl(Properties properties){
         this.repository = RepositoryManager.getRepository(Benutzer.class, Benutzer::getEmailAdresse, properties);

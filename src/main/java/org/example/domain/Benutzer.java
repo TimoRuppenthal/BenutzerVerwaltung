@@ -1,17 +1,21 @@
 package org.example.domain;
 
+import io.jexxa.addend.applicationcore.Aggregate;
+import io.jexxa.addend.applicationcore.AggregateID;
+
 import java.util.Objects;
 
+@Aggregate
 public class Benutzer {
     private final String nachname;
     private final String vorname;
 
-    private final String emailAdresse;
+    private final EmailAdresse emailAdresse;
 
     public Benutzer(String nachname, String vorname, String emailAdresse){
         this.nachname = nachname;
         this.vorname = vorname;
-        this.emailAdresse = emailAdresse;
+        this.emailAdresse = new EmailAdresse(emailAdresse);
     }
 
     @Override
@@ -19,7 +23,7 @@ public class Benutzer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Benutzer benutzer = (Benutzer) o;
-        return Objects.equals(nachname, benutzer.nachname) && Objects.equals(vorname, benutzer.vorname);
+        return Objects.equals(getEmailAdresse(), benutzer.getEmailAdresse());
     }
 
     @Override
@@ -36,6 +40,7 @@ public class Benutzer {
         return vorname;
     }
 
-    public String getEmailAdresse(){ return emailAdresse; }
+    @AggregateID
+    public EmailAdresse getEmailAdresse(){ return emailAdresse; }
 
 }

@@ -8,8 +8,7 @@ import java.util.List;
 
 @DomainService
 public class StammdatenService {
-    private static final Benutzer TIMO = new Benutzer("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com");
-    private static final Benutzer MICHAEL = new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com");
+
     private final BenutzerRepository benutzerRepository;
 
     public StammdatenService(BenutzerRepository benutzerRepository) {
@@ -18,6 +17,8 @@ public class StammdatenService {
 
     public void initStammdaten(){
 
+        final Benutzer TIMO = new Benutzer("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com");
+        final Benutzer MICHAEL = new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com");
         List<Benutzer> alleBenutzer = benutzerRepository.getAll();
         if(!alleBenutzer.contains(TIMO)){
             benutzerRepository.add(TIMO);
