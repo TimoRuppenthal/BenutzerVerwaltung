@@ -7,15 +7,14 @@ import java.util.Objects;
 
 @Aggregate
 public class Benutzer {
-    private final String nachname;
-    private final String vorname;
+
+    private final BenutzerDaten benutzerDaten;
 
     private final EmailAdresse emailAdresse;
 
-    public Benutzer(String nachname, String vorname, String emailAdresse){
-        this.nachname = nachname;
-        this.vorname = vorname;
-        this.emailAdresse = new EmailAdresse(emailAdresse);
+    public Benutzer(BenutzerDaten benutzerDaten, EmailAdresse emailAdresse){
+        this.benutzerDaten = benutzerDaten;
+        this.emailAdresse = emailAdresse;
     }
 
     @Override
@@ -26,18 +25,13 @@ public class Benutzer {
         return Objects.equals(getEmailAdresse(), benutzer.getEmailAdresse());
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nachname, vorname);
-    }
-
     @SuppressWarnings("unused")
     public String getNachname() {
-        return nachname;
+        return benutzerDaten.nachname();
     }
 
     public String getVorname() {
-        return vorname;
+        return benutzerDaten.vorname();
     }
 
     @AggregateID

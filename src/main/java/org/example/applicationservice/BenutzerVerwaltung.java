@@ -2,6 +2,7 @@ package org.example.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
 import org.example.domain.Benutzer;
+import org.example.domain.BenutzerDaten;
 import org.example.domain.BenutzerRepository;
 import org.example.domain.EmailAdresse;
 
@@ -12,8 +13,8 @@ public class BenutzerVerwaltung {
 
     private final BenutzerRepository benutzerRepository;
 
-    public void add (String vorname, String nachname, EmailAdresse emailAdresse){
-        benutzerRepository.add(new Benutzer(nachname, vorname, emailAdresse.emailAdresse()));
+    public void add (EmailAdresse emailAdresse, BenutzerDaten benutzerDaten){
+        benutzerRepository.add(new Benutzer(benutzerDaten, emailAdresse));
     }
 
     @SuppressWarnings("unused")
