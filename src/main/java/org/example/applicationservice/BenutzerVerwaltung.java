@@ -1,10 +1,12 @@
 package org.example.applicationservice;
 
+import io.jexxa.addend.applicationcore.ApplicationService;
 import org.example.domain.Benutzer;
 import org.example.domain.BenutzerRepository;
 
 import java.util.List;
 
+@ApplicationService
 public class BenutzerVerwaltung {
 
     private final BenutzerRepository benutzerRepository;

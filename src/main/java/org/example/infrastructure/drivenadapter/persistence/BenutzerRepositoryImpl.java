@@ -1,5 +1,6 @@
 package org.example.infrastructure.drivenadapter.persistence;
 
+import io.jexxa.addend.infrastructure.DrivenAdapter;
 import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
 import org.example.domain.Benutzer;
@@ -8,6 +9,7 @@ import org.example.domain.BenutzerRepository;
 import java.util.List;
 import java.util.Properties;
 
+@DrivenAdapter
 public class BenutzerRepositoryImpl implements BenutzerRepository {
     private final IRepository<Benutzer, String> repository;
 

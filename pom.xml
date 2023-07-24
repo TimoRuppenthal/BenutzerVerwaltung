@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <postgres.version>42.6.0</postgres.version>
+        <addend.version>2.0.0</addend.version>
     </properties>
 
     <dependencies>
@@ -34,5 +35,13 @@
             <artifactId>postgresql</artifactId>
             <version>${postgres.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.jexxa.addend</groupId>
+            <artifactId>Addend</artifactId>
+            <version>${addend.version}</version>
+        </dependency>
+
+
     </dependencies>
 </project>

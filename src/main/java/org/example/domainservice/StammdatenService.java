@@ -1,10 +1,12 @@
 package org.example.domainservice;
 
+import io.jexxa.addend.applicationcore.DomainService;
 import org.example.domain.Benutzer;
 import org.example.domain.BenutzerRepository;
 
 import java.util.List;
 
+@DomainService
 public class StammdatenService {
     private static final Benutzer TIMO = new Benutzer("Ruppenthal", "Timo", "ruppenthal.timo@gmail.com");
     private static final Benutzer MICHAEL = new Benutzer("Repplinger", "Michael", "michael.repplinger@gmail.com");
