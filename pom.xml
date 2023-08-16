@@ -15,7 +15,7 @@
 
         <postgres.version>42.6.0</postgres.version>
         <addend.version>2.0.0</addend.version>
-        <junit.platform.launcher.version>1.9.3</junit.platform.launcher.version>
+        <junit.platform.launcher.version>1.10.0</junit.platform.launcher.version>
         <junit.jupiter.engine.version>5.9.3</junit.jupiter.engine.version>
         <junit.jupiter.params.version>5.9.3</junit.jupiter.params.version>
         <jexxa.release.version>6.1.3</jexxa.release.version>
