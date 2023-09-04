@@ -14,7 +14,7 @@ Dieses Projekt soll folgende Funktionalität anbieten:
 Abbildung auf DDD Mustersprache und Klassen
 ApplicationService: BenutzerVerwaltung
     Neue Methoden: registriere und verifiziere
-ValueObject: E-Mail-Adresse, Benutzerdaten, Zahlencode
+ValueObject: E-Mail-Adresse, Benutzerdaten, VerifizierungsCode
 Aggregate: RegistrierungsDaten
 Repository: RegistrierungsDatenRepository
 DomainEvent: ZahlencodeVerschickt

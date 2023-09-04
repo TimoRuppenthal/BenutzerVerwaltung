@@ -1,10 +1,7 @@
 package org.example.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
-import org.example.domain.Benutzer;
-import org.example.domain.BenutzerDaten;
-import org.example.domain.BenutzerRepository;
-import org.example.domain.EmailAdresse;
+import org.example.domain.*;
 
 import java.util.List;
 
@@ -31,5 +28,13 @@ public class BenutzerVerwaltung {
 
     public BenutzerVerwaltung (BenutzerRepository benutzerRepository){
         this.benutzerRepository = benutzerRepository;
+    }
+
+    public void registriere(EmailAdresse emailAdresse, BenutzerDaten benutzerDaten){
+
+    }
+
+    public void verifizieren(EmailAdresse emailAdresse, VerifizierungsCode verifizierungsCode){
+
     }
 }
