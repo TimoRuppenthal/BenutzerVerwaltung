@@ -5,7 +5,7 @@ Dieses Projekt soll folgende Funktionalität anbieten:
 * Löschen eines Benutzers aus der Benutzerverwaltung
 * Alle Benutzer aus der Benutzerverwaltung abfragen können
 
-[User-Story]Als Accountmanager möchte ich, dass ein neuer Kunde sich bei der BenutzerVerwaltung registrieren muss, damit ich die Möglichkeit habe die Registrierungsdaten automatisiert zu verifizieren.
+[User-Story Benutzer registrieren]Als Accountmanager möchte ich, dass ein neuer Kunde sich bei der BenutzerVerwaltung registrieren muss, damit ich die Möglichkeit habe die Registrierungsdaten automatisiert zu verifizieren.
 * Bei der Registrierung muss eine gültige E-Mail-Adresse und Benutzerdaten angegeben werden.
 * Es wird ein 6-stelliger Zahlencode an die angegebene E-Mail-Adresse verschickt
 * Zahlencode muss zusammen mit der E-Mail-Adresse übergeben werden, damit der Benutzer in die Benutzerverwaltung hinzugefügt wird
@@ -17,5 +17,5 @@ ApplicationService: BenutzerVerwaltung
 ValueObject: E-Mail-Adresse, Benutzerdaten, VerifizierungsCode
 Aggregate: RegistrierungsDaten
 Repository: RegistrierungsDatenRepository
-DomainEvent: ZahlencodeVerschickt
+DomainEvent: VerifizierungsCodeVerschickt
 
