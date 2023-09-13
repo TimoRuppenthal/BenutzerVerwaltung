@@ -2,6 +2,7 @@ package org.example.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
 import org.example.domain.*;
+import org.example.domainservice.VerifizierungsCodeSender;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class BenutzerVerwaltung {
 
     private final BenutzerRepository benutzerRepository;
     private  final RegistrierungsDatenRepository registrierungsDatenRepository;
+
 
     public void add (EmailAdresse emailAdresse, BenutzerDaten benutzerDaten){
         benutzerRepository.add(new Benutzer(benutzerDaten, emailAdresse));
@@ -34,11 +36,12 @@ public class BenutzerVerwaltung {
 
     public void registriere(EmailAdresse emailAdresse, BenutzerDaten benutzerDaten){
         registrierungsDatenRepository.add(new RegistrierungsDaten(emailAdresse, benutzerDaten));
-        //TODO: BestätigungsCode verschicken
+
+
     }
 
     public void verifiziere(EmailAdresse emailAdresse, VerifizierungsCode verifizierungsCode) throws UngueltigerVerifizierungsCode {
-        RegistrierungsDaten registrierungsDaten = registrierungsDatenRepository.get(emailAdresse);
+        RegistrierungsDaten registrierungsDaten = registrierungsDatenRepository.get(emailAdresse).orElseThrow();
         registrierungsDaten.verifiziere(verifizierungsCode);
 
         add(emailAdresse, registrierungsDaten.getBenutzerDaten());
