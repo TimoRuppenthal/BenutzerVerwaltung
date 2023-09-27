@@ -8,6 +8,7 @@ import org.example.domain.BenutzerRepository;
 import org.example.domain.EmailAdresse;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
 
 @DrivenAdapter
@@ -33,6 +34,16 @@ public class BenutzerRepositoryImpl implements BenutzerRepository {
     public void add(Benutzer benutzer) {
         repository.add(benutzer);
 
+    }
+
+    @Override
+    public Optional<Benutzer> get(EmailAdresse emailAdresse) {
+        return repository.get(emailAdresse);
+    }
+
+    @Override
+    public void update(Benutzer benutzer) {
+        repository.update(benutzer);
     }
 
 }

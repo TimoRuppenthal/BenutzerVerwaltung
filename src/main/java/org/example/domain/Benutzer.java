@@ -8,7 +8,7 @@ import java.util.Objects;
 @Aggregate
 public class Benutzer {
 
-    private final BenutzerDaten benutzerDaten;
+    private BenutzerDaten benutzerDaten;
 
     private final EmailAdresse emailAdresse;
 
@@ -36,5 +36,9 @@ public class Benutzer {
 
     @AggregateID
     public EmailAdresse getEmailAdresse(){ return emailAdresse; }
+
+    public void setBenutzerDaten(BenutzerDaten benutzerDaten){
+        this.benutzerDaten = benutzerDaten;
+    }
 
 }

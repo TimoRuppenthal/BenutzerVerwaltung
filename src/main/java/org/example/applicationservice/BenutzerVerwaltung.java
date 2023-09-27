@@ -47,4 +47,9 @@ public class BenutzerVerwaltung {
         add(emailAdresse, registrierungsDaten.getBenutzerDaten());
         registrierungsDatenRepository.remove(emailAdresse);
     }
+    public  void aktualisiereBenutzerDaten(EmailAdresse emailAdresse, BenutzerDaten benutzerDaten){
+        Benutzer benutzer = benutzerRepository.get(emailAdresse).orElseThrow();
+        benutzer.setBenutzerDaten(benutzerDaten);
+        benutzerRepository.update(benutzer);
+    }
 }
