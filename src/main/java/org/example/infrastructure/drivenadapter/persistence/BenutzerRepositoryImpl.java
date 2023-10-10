@@ -10,7 +10,7 @@ import org.example.domain.EmailAdresse;
 import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
-
+@SuppressWarnings("unused")
 @DrivenAdapter
 public class BenutzerRepositoryImpl implements BenutzerRepository {
     private final IRepository<Benutzer, EmailAdresse> repository;

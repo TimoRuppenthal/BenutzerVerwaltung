@@ -16,17 +16,17 @@ public class StammdatenService {
     public StammdatenService(BenutzerRepository benutzerRepository) {
         this.benutzerRepository = benutzerRepository;
     }
-
+    @SuppressWarnings("java:S106")
     public void initStammdaten(){
 
-        final Benutzer TIMO = new Benutzer(new BenutzerDaten("Ruppenthal", "Timo"), new EmailAdresse("ruppenthal.timo@gmail.com"));
-        final Benutzer MICHAEL = new Benutzer(new BenutzerDaten("Repplinger", "Michael"), new EmailAdresse( "michael.repplinger@gmail.com"));
+        final Benutzer timo = new Benutzer(new BenutzerDaten("Ruppenthal", "Timo"), new EmailAdresse("ruppenthal.timo@gmail.com"));
+        final Benutzer michael = new Benutzer(new BenutzerDaten("Repplinger", "Michael"), new EmailAdresse( "michael.repplinger@gmail.com"));
         List<Benutzer> alleBenutzer = benutzerRepository.getAll();
-        if(!alleBenutzer.contains(TIMO)){
-            benutzerRepository.add(TIMO);
+        if(!alleBenutzer.contains(timo)){
+            benutzerRepository.add(timo);
         }
-        if(!alleBenutzer.contains(MICHAEL)){
-            benutzerRepository.add(MICHAEL);
+        if(!alleBenutzer.contains(michael)){
+            benutzerRepository.add(michael);
         }
         benutzerRepository
                 .getAll()

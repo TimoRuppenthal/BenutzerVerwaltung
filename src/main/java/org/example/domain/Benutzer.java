@@ -25,6 +25,11 @@ public class Benutzer {
         return Objects.equals(getEmailAdresse(), benutzer.getEmailAdresse());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailAdresse);
+    }
+
     @SuppressWarnings("unused")
     public String getNachname() {
         return benutzerDaten.nachname();

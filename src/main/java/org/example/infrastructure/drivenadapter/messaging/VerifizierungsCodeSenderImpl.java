@@ -8,7 +8,7 @@ import org.example.domainservice.VerifizierungsCodeSender;
 import java.util.Properties;
 
 import static io.jexxa.infrastructure.MessageSenderManager.getMessageSender;
-
+@SuppressWarnings("unused")
 @DrivenAdapter
 public class VerifizierungsCodeSenderImpl implements VerifizierungsCodeSender {
 

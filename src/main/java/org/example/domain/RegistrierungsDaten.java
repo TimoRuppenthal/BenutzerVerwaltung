@@ -6,7 +6,7 @@ import io.jexxa.addend.applicationcore.AggregateID;
 import java.util.UUID;
 
 import static org.example.domain.DomainEventPublisher.publish;
-
+@SuppressWarnings("unused")
 @Aggregate
 public class RegistrierungsDaten {
     private final BenutzerDaten benutzerDaten;
