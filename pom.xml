@@ -17,7 +17,7 @@
         <addend.version>2.0.0</addend.version>
         <junit.platform.launcher.version>1.10.1</junit.platform.launcher.version>
         <junit.jupiter.engine.version>5.10.0</junit.jupiter.engine.version>
-        <junit.jupiter.params.version>5.10.0</junit.jupiter.params.version>
+        <junit.jupiter.params.version>5.10.1</junit.jupiter.params.version>
         <jexxa.release.version>6.2.2</jexxa.release.version>
         <maven.surefire.plugin>3.2.1</maven.surefire.plugin>
     </properties>
