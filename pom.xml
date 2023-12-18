@@ -20,7 +20,7 @@
         <junit.jupiter.engine.version>5.10.1</junit.jupiter.engine.version>
         <junit.jupiter.params.version>5.10.1</junit.jupiter.params.version>
       
-        <jexxa.release.version>6.2.2</jexxa.release.version>
+        <jexxa.release.version>7.0.0</jexxa.release.version>
         <maven.surefire.plugin>3.2.1</maven.surefire.plugin>
     </properties>
 
